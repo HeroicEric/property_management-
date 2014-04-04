@@ -1,0 +1,30 @@
+<%= form_for(@owner) do |f| %>
+
+  <% if @owner.errors.full_messages.count > 0 %>
+    <ul>
+      <% @owner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

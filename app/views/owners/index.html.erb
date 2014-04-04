@@ -1,0 +1,9 @@
+<h1> List of Owners </h1>
+<ul>
+  <lu><% @owners.each do |owner| %></li>
+    <h1> Full Name       Email </hi>
+  <p><%=  "#{owner.fullname} - #{owner.email}" %></p>
+  <li><%= link_to 'Add New Owner', new_owner_path %></li>
+     
+  <li><% end %></li>
+</ul>
