@@ -21,7 +21,7 @@ So that I can refer back to pertinent information
 
     it 'registers a building' do
   
-      visit '/owner/building/new'
+      visit '/buildings/new'
 
       fill_in 'Address', from: '1 wall st'
       fill_in 'City', with: "Boston"
@@ -31,13 +31,13 @@ So that I can refer back to pertinent information
       click_on 'Create Building'
 
       expect(Building.count).to eq(1)
-      expect(page).to have_content("Building Added to Listing")
+      expect(page).to have_content("List of Buildings")
     end
   end
 
   context 'with invalid attributes' do
     it 'shows error if required fields are missing' do
-      visit '/owner/building/new'
+      visit '/buildings/new'
       click_on 'Create Building'
  
       expect(page).to_not have_content("Building Added to Listing")
