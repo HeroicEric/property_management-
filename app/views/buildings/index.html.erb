@@ -1,0 +1,10 @@
+<h1> List of Buildings </h1>
+<ul>
+  <lu><% @buildings.each do |building| %></li>
+    <h1> Full Name       Email </hi>
+  <p><%=  "#{building.address} - #{building.city}-#{building.state}-#{building.postal_code}" %></p>
+  <%= building.description %>
+
+     
+  <li><% end %></li>
+</ul>
