@@ -6,7 +6,6 @@ class BuildingsController < ApplicationController
   def new
     @building = Building.new
     @states = ['MA', 'VA', 'CT']
-    @owner = Owner.all.map{ |c| [c.first_name, c.id] }
   end
 
   def create
@@ -15,7 +14,6 @@ class BuildingsController < ApplicationController
     if @building.save
       redirect_to owners_path, notice: 'Building Added to Listing'
     else
-      @owner = Owner.all.map{ |c| [c.first_name, c.id] }
       render :new
     end
   end
