@@ -4,7 +4,7 @@ class Owner < ActiveRecord::Base
   validates :email, presence: true, format: {with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ }
 
   has_many :buildings, foreign_key: 'owner_id', class_name: 'Building'
-  
+
   def fullname
     "#{first_name} #{last_name}"
   end

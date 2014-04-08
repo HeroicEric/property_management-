@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :building do
     Address '1 wall st'
     City 'Boston'
