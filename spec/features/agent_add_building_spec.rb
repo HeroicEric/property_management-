@@ -15,10 +15,6 @@ feature 'user can record building', %q{
 
 
   context 'with valid attributes' do
-    before(:each) do
-      @agent = FactoryGirl.create(:owner)
-    end
-
     it 'registers a building' do
       visit '/buildings/new'
 
@@ -30,7 +26,27 @@ feature 'user can record building', %q{
       click_on 'Create Building'
 
       expect(Building.count).to eq(1)
-      expect(page).to have_content("List of Buildings")
+      expect(page).to have_content("Building Added to Listing")
+      expect(current_path).to eq new_building_path
+    end
+
+    context "when an owner is selected" do
+      it 'registers a building' do
+        owner = FactoryGirl.create(:owner)
+
+        visit '/buildings/new'
+        save_and_open_page
+        select owner.fullname, from: 'Owner'
+        fill_in 'Address', with: '1 wall st'
+        fill_in 'City', with: "Boston"
+        select 'MA', from: 'State'
+        fill_in 'Postal code', with: '02148'
+        click_on 'Create Building'
+
+        expect(Building.count).to eq(1)
+        expect(page).to have_content("Building Added to Listing")
+        expect(current_path).to eq new_building_path
+      end
     end
   end
 
