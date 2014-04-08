@@ -21,6 +21,7 @@ feature 'user can record building', %q{
       click_on 'Create Owner'
 
       expect(page).to have_content('Owner Added to Listing')
+      expect(current_path).to eq new_owner_path
     end
   end
 
