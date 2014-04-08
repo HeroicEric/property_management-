@@ -1,14 +1,14 @@
 FactoryGirl.define do
   factory :building do
-    Address '1 wall st'
-    City 'Boston'
-    State 'MA'
-    Postal_code '02148'
+    address '1 wall st'
+    city 'Boston'
+    state 'MA'
+    postal_code '02148'
   end
 
   factory :owner do
-    First_name 'Mike'
-    Last_name 'Smith'
-    Email 'r4eth@yahoo.com'
+    first_name 'Mike'
+    last_name 'Smith'
+    email 'r4eth@yahoo.com'
   end
 end
