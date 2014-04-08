@@ -22,7 +22,7 @@ feature 'user can record building', %q{
     it 'registers a building' do
       visit '/buildings/new'
 
-      fill_in 'Address', from: '1 wall st'
+      fill_in 'Address', with: '1 wall st'
       fill_in 'City', with: "Boston"
       select 'MA', from: 'State'
       fill_in 'Postal code', with: '02148'
