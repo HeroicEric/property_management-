@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Owner do
+  describe "validation associations" do
+    it { should have_many :buildings }
+  end
+
   describe "Validation Tests" do
     it { should have_valid(:first_name).when("Robel") }
     it { should_not have_valid(:first_name).when(nil, "") }
